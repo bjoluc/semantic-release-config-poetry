@@ -1,0 +1,96 @@
+{
+	"name": "@bjoluc/semantic-release-config-poetry",
+	"version": "1.0.0",
+	"description": "semantic-release configuration for Python projects using Poetry ",
+	"main": "releaserc.json",
+	"files": [
+		"releaserc.json"
+	],
+	"scripts": {
+		"test": "prettier --check *.json",
+		"commit": "git-cz"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bjoluc/semantic-release-config-poetry.git"
+	},
+	"keywords": [
+		"semantic-release-config",
+		"python",
+		"poetry",
+		"pypi",
+		"github"
+	],
+	"author": "bjoluc <mail@bjoluc.de>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/bjoluc/semantic-release-config-poetry/issues"
+	},
+	"homepage": "https://github.com/bjoluc/semantic-release-config-poetry#readme",
+	"dependencies": {
+		"@google/semantic-release-replace-plugin": "^1.0.2",
+		"@semantic-release/changelog": "^5.0.1",
+		"@semantic-release/exec": "^5.0.0",
+		"@semantic-release/git": "^9.0.0"
+	},
+	"peerDependencies": {
+		"semantic-release": ">=17"
+	},
+	"devDependencies": {
+		"@bjoluc/semantic-release-config-npm": "^1.0.0",
+		"@commitlint/cli": "^11.0.0",
+		"@commitlint/config-conventional": "^11.0.0",
+		"commitizen": "^4.2.3",
+		"conventional-changelog-conventionalcommits": "^4.5.0",
+		"cz-conventional-changelog": "^3.3.0",
+		"husky": "^5.0.9",
+		"lint-staged": "^10.5.4",
+		"prettier": "^2.2.1",
+		"semantic-release": "^17.4.3"
+	},
+	"prettier": {
+		"trailingComma": "es5",
+		"printWidth": 100,
+		"useTabs": true
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+		}
+	},
+	"lint-staged": {
+		"*.json": [
+			"prettier --write"
+		]
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-conventional"
+		],
+		"rules": {
+			"subject-case": [
+				2,
+				"always",
+				[
+					"sentence-case"
+				]
+			],
+			"scope-case": [
+				0,
+				"never",
+				[
+					"lower-case"
+				]
+			]
+		}
+	},
+	"release": {
+		"extends": "@bjoluc/semantic-release-config-npm"
+	}
+}

@@ -1,0 +1,20 @@
+name: "Release Poetry Python Project"
+description: "Release a Poetry Python project using semantic-release"
+inputs:
+  repository:
+    description: "The repository to publish the package to"
+    required: false
+    default: "https://upload.pypi.org/legacy/"
+runs:
+  using: "composite"
+  steps:
+    - name: Install release dependencies
+      shell: bash
+      run: npm i -g semantic-release@^17.3.8 @bjoluc/semantic-release-config-poetry@^$(cat ${{ github.action_path }}/package.json | python3 -c "import sys, json; print(json.load(sys.stdin)['version'])")
+    - name: Release
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+        PYPI_REPOSITORY: ${{ inputs.repository }}
+      run: semantic-release --extends @bjoluc/semantic-release-config-poetry
