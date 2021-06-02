@@ -1,6 +1,6 @@
 {
 	"name": "@bjoluc/semantic-release-config-poetry",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "semantic-release configuration for Python projects using Poetry ",
 	"main": "releaserc.json",
 	"files": [

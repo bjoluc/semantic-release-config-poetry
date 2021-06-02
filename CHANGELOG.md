@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.0.3](https://github.com/bjoluc/semantic-release-config-poetry/compare/v1.0.2...v1.0.3) (2021-06-02)
+
+
+### Bug Fixes
+
+* Add missing `conventional-changelog-conventionalcommits` dependency ([f8596a1](https://github.com/bjoluc/semantic-release-config-poetry/commit/f8596a133513c184edceb9cc84ed3a856ae73d0b))
+
 ### [1.0.2](https://github.com/bjoluc/semantic-release-config-poetry/compare/v1.0.1...v1.0.2) (2021-06-02)
 
 
