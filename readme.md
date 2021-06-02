@@ -12,7 +12,7 @@ A shareable semantic-release configuration and composite GitHub Action for Pytho
 
 * Follow [Conventional Commits](https://www.conventionalcommits.org) (for instance, using [commitizen](https://pypi.org/project/commitizen/)).
 
-* Create an [API token](https://pypi.org/help/#apitoken) for PyPI (or the package index of your choice).
+* Create an [API token](https://pypi.org/help/#apitoken) for PyPI (or another package index of your choice, like [Test PyPI](https://test.pypi.org/)).
 
 * If you are using GitHub Actions:
   * Add your PyPI API token as a secret named `PYPI_TOKEN`.
@@ -35,6 +35,9 @@ A shareable semantic-release configuration and composite GitHub Action for Pytho
         - name: Install poetry
           run: pip install poetry==1.1.4
         - uses: bjoluc/semantic-release-config-poetry@v1
+          with:
+            pypi_token: ${{ secrets.PYPI_TOKEN }}
+            github_token: ${{ secrets.GITHUB_TOKEN }}
 	```
 
 * If you are not using GitHub Actions, configure a release job in your CI like this:
@@ -44,14 +47,10 @@ A shareable semantic-release configuration and composite GitHub Action for Pytho
 
 ## Configuration
 
-The shareable semantic-release configuration exposed by this package requires three environment variables (the GitHub action automatically sets them for you):
+The shareable semantic-release configuration exposed by this package requires the following environment variables:
 
-* `PYPI_REPOSITORY`: The repository to upload your Python package to (e.g., `https://upload.pypi.org/legacy/` for PyPI, or `https://test.pypi.org/legacy/` for Test PyPI). The GitHub action defaults to the PyPI URL, but you can change it using the `repository` input:
-  ```yml
-	:
-	 - uses: bjoluc/semantic-release-config-poetry@v1
-    with:
-      repository: https://test.pypi.org/legacy/
-	```
-* `PYPI_TOKEN`: An API token for your PyPI repository
-* `GITHUB_TOKEN`: A GitHub API token (to publish GitHub releases and comment on released issues)
+| Environment variable name | GitHub Action input name | Description                                                                                                                                          | GitHub Action input default value |
+| ------------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
+| `PYPI_REPOSITORY`         | `repository`             | The repository to upload your Python package to (e.g., `https://upload.pypi.org/legacy/` for PyPI, or `https://test.pypi.org/legacy/` for Test PyPI) | `https://upload.pypi.org/legacy/` |
+| `PYPI_TOKEN`              | `pypi_token`             | An API token for the specified PyPI repository                                                                                                       | -                                 |
+| `GITHUB_TOKEN`            | `github_token`           | A GitHub API token (to publish GitHub releases and comment on resolved issues)                                                                       | -                                 |
