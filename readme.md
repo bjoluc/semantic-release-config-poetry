@@ -33,7 +33,7 @@ A shareable semantic-release configuration and composite GitHub Action for Pytho
           with:
             python-version: 3.8
         - name: Install poetry
-          run: pip install poetry==1.1.4
+          run: pip install poetry==1.1.6
         - uses: bjoluc/semantic-release-config-poetry@v1
           with:
             pypi_token: ${{ secrets.PYPI_TOKEN }}
