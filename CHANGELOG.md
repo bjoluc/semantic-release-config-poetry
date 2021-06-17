@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.0.4](https://github.com/bjoluc/semantic-release-config-poetry/compare/v1.0.3...v1.0.4) (2021-06-17)
+
+
+### Bug Fixes
+
+* Invoke npm with the `--no-save` flag to silence warnings on old npm versions ([ab0d647](https://github.com/bjoluc/semantic-release-config-poetry/commit/ab0d64785076f90ba37340764d82d22087b85ee9))
+
 ### [1.0.3](https://github.com/bjoluc/semantic-release-config-poetry/compare/v1.0.2...v1.0.3) (2021-06-02)
 
 
