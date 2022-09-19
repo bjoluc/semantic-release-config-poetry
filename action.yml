@@ -16,6 +16,10 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: "lts/*"
     - name: Install release dependencies
       shell: bash
       run: npm i --no-save @bjoluc/semantic-release-config-poetry@^$(cat ${{ github.action_path }}/package.json | python3 -c "import sys, json; print(json.load(sys.stdin)['version'])")
