@@ -7,8 +7,7 @@
 		"releaserc.json"
 	],
 	"scripts": {
-		"test": "prettier --check *.json",
-		"commit": "git-cz"
+		"test": "prettier --check *.json"
 	},
 	"repository": {
 		"type": "git",
@@ -28,69 +27,24 @@
 	},
 	"homepage": "https://github.com/bjoluc/semantic-release-config-poetry#readme",
 	"dependencies": {
-		"@google/semantic-release-replace-plugin": "^1.0.2",
-		"@semantic-release/changelog": "^5.0.1",
-		"@semantic-release/exec": "^5.0.0",
-		"@semantic-release/git": "^9.0.0",
-		"conventional-changelog-conventionalcommits": "^4.5.0"
+		"@google/semantic-release-replace-plugin": "^1.1.0",
+		"@semantic-release/changelog": "^6.0.1",
+		"@semantic-release/exec": "^6.0.3",
+		"@semantic-release/git": "^10.0.1",
+		"conventional-changelog-conventionalcommits": "^5.0.0"
 	},
 	"peerDependencies": {
 		"semantic-release": ">=17"
 	},
 	"devDependencies": {
-		"@bjoluc/semantic-release-config-npm": "^1.0.0",
-		"@commitlint/cli": "^11.0.0",
-		"@commitlint/config-conventional": "^11.0.0",
-		"commitizen": "^4.2.3",
-		"cz-conventional-changelog": "^3.3.0",
-		"husky": "^5.0.9",
-		"lint-staged": "^10.5.4",
-		"prettier": "^2.2.1",
-		"semantic-release": "^17.4.3"
+		"@bjoluc/semantic-release-config-npm": "^3.0.0",
+		"prettier": "^2.7.1",
+		"semantic-release": "^19.0.5"
 	},
 	"prettier": {
 		"trailingComma": "es5",
 		"printWidth": 100,
 		"useTabs": true
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged",
-			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-		}
-	},
-	"lint-staged": {
-		"*.json": [
-			"prettier --write"
-		]
-	},
-	"config": {
-		"commitizen": {
-			"path": "./node_modules/cz-conventional-changelog",
-			"disableScopeLowerCase": true,
-			"disableSubjectLowerCase": true
-		}
-	},
-	"commitlint": {
-		"extends": [
-			"@commitlint/config-conventional"
-		],
-		"rules": {
-			"subject-case": [
-				2,
-				"always",
-				[
-					"sentence-case"
-				]
-			],
-			"scope-case": [
-				0,
-				"never",
-				[
-					"lower-case"
-				]
-			]
-		}
 	},
 	"release": {
 		"extends": "@bjoluc/semantic-release-config-npm"
