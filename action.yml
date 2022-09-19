@@ -11,6 +11,14 @@ inputs:
   pypi_repository:
     description: "The repository to upload your Python package to (e.g., `https://upload.pypi.org/legacy/` for PyPI, or `https://test.pypi.org/legacy/` for Test PyPI)"
     required: false
+  changelog_file:
+    description: "File to write the changelog to"
+    required: false
+    default: "CHANGELOG.md"
+  branch:
+    description: "Git branch to use"
+    required: false
+    default: "main"
 
 runs:
   using: "composite"
@@ -28,4 +36,6 @@ runs:
         PYPI_REPOSITORY: ${{ inputs.pypi_repository }}
         PYPI_TOKEN: ${{ inputs.pypi_token }}
         GITHUB_TOKEN: ${{ inputs.github_token }}
+        CHANGELOG_FILE: ${{ inputs.changelog_file }}
+        BRANCH: ${{ inputs.branch }}
       run: npx semantic-release --extends @bjoluc/semantic-release-config-poetry
