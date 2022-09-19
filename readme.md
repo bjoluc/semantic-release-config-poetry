@@ -41,8 +41,8 @@ A shareable semantic-release configuration and composite GitHub Action for Pytho
 	```
 
 * If you are not using GitHub Actions, configure a release job in your CI like this:
-  * Install Python, Poetry, and Node.js
-  * Run `npm install semantic-release @bjoluc/semantic-release-config-poetry`
+  * Install Python, Poetry, and a Node.js LTS version
+  * Run `npm install --no-save @bjoluc/semantic-release-config-poetry`
   * Run `npx semantic-release --extends @bjoluc/semantic-release-config-poetry`
 
 ## Configuration

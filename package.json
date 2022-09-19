@@ -31,15 +31,12 @@
 		"@semantic-release/changelog": "^6.0.1",
 		"@semantic-release/exec": "^6.0.3",
 		"@semantic-release/git": "^10.0.1",
-		"conventional-changelog-conventionalcommits": "^5.0.0"
-	},
-	"peerDependencies": {
-		"semantic-release": ">=17"
+		"conventional-changelog-conventionalcommits": "^5.0.0",
+		"semantic-release": "^19.0.5"
 	},
 	"devDependencies": {
 		"@bjoluc/semantic-release-config-npm": "^3.0.0",
-		"prettier": "^2.7.1",
-		"semantic-release": "^19.0.5"
+		"prettier": "^2.7.1"
 	},
 	"prettier": {
 		"trailingComma": "es5",
