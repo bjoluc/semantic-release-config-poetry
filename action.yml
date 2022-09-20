@@ -3,7 +3,7 @@ description: "Release a Poetry Python project using semantic-release"
 
 inputs:
   pypi_token:
-    description: "An API token for the PyPI repository specified in pypi_repository"
+    description: "An API token for the PyPI repository specified by `pypi_repository`"
     required: true
   github_token:
     description: "A GitHub API token (to publish GitHub releases and comment on resolved issues)"

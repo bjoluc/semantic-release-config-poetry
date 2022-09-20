@@ -47,15 +47,16 @@ A shareable semantic-release configuration and composite GitHub Action for Pytho
 
 ## Configuration
 
-The shareable semantic-release configuration exposed by this package requires the following environment variables:
+The shareable semantic-release configuration exposed by this package requires the following environment variables.
+When using the GitHub action, each environment variable can be set via its corresponding lower-case input variable (e.g., `pypi_token` for `PYPI_TOKEN`).
 
-| Environment variable name | GitHub Action input name | Description                                                                    |
-| ------------------------- | ------------------------ | ------------------------------------------------------------------------------ |
-| `PYPI_TOKEN`              | `pypi_token`             | An API token for the PyPI repository specified in PYPI_REPOSITORY              |
-| `GITHUB_TOKEN`            | `github_token`           | A GitHub API token (to publish GitHub releases and comment on resolved issues) |
+| Environment variable | Description                                                                    |
+| -------------------- | ------------------------------------------------------------------------------ |
+| `PYPI_TOKEN`         | An API token for the PyPI repository specified by `PYPI_REPOSITORY`            |
+| `GITHUB_TOKEN`       | A GitHub API token (to publish GitHub releases and comment on resolved issues) |
 
 Furthermore, the following optional environment variables can be set:
 
-| Environment variable name | GitHub Action input name | Description                                                                                                                                          | Default value                     |
-| ------------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
-| `PYPI_REPOSITORY`         | `pypi_repository`        | The repository to upload your Python package to (e.g., `https://upload.pypi.org/legacy/` for PyPI, or `https://test.pypi.org/legacy/` for Test PyPI) | `https://upload.pypi.org/legacy/` |
+| Environment variable | Description                                                                                                                                          | Default value                     |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
+| `PYPI_REPOSITORY`    | The repository to upload your Python package to (e.g., `https://upload.pypi.org/legacy/` for PyPI, or `https://test.pypi.org/legacy/` for Test PyPI) | `https://upload.pypi.org/legacy/` |
