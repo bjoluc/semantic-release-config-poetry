@@ -2,16 +2,15 @@ name: "Release Poetry Python Project"
 description: "Release a Poetry Python project using semantic-release"
 
 inputs:
-  repository:
-    description: "The repository to upload your Python package to (e.g., `https://upload.pypi.org/legacy/` for PyPI, or `https://test.pypi.org/legacy/` for Test PyPI)"
-    required: false
-    default: "https://upload.pypi.org/legacy/"
   pypi_token:
-    description: "An API token for the specified PyPI repository"
+    description: "An API token for the PyPI repository specified in pypi_repository"
     required: true
   github_token:
     description: "A GitHub API token (to publish GitHub releases and comment on resolved issues)"
     required: true
+  pypi_repository:
+    description: "The repository to upload your Python package to (e.g., `https://upload.pypi.org/legacy/` for PyPI, or `https://test.pypi.org/legacy/` for Test PyPI)"
+    required: false
 
 runs:
   using: "composite"
@@ -26,7 +25,7 @@ runs:
     - name: Release
       shell: bash
       env:
-        PYPI_REPOSITORY: ${{ inputs.repository }}
+        PYPI_REPOSITORY: ${{ inputs.pypi_repository }}
         PYPI_TOKEN: ${{ inputs.pypi_token }}
         GITHUB_TOKEN: ${{ inputs.github_token }}
       run: npx semantic-release --extends @bjoluc/semantic-release-config-poetry

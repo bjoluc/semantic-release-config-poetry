@@ -2,12 +2,13 @@
 	"name": "@bjoluc/semantic-release-config-poetry",
 	"version": "1.0.4",
 	"description": "semantic-release configuration for Python projects using Poetry ",
-	"main": "releaserc.json",
+	"type": "module",
+	"main": "release.config.js",
 	"files": [
-		"releaserc.json"
+		"release.config.js"
 	],
 	"scripts": {
-		"test": "prettier --check *.json"
+		"test": "prettier --check ."
 	},
 	"repository": {
 		"type": "git",
