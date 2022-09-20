@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.0](https://github.com/bjoluc/semantic-release-config-poetry/compare/v2.0.1...v2.1.0) (2022-09-20)
+
+
+### Features
+
+* Add support for `RELEASE_BRANCH` and `CHANGELOG_FILE` environment variables ([96dcd00](https://github.com/bjoluc/semantic-release-config-poetry/commit/96dcd00b86f7f3ac44e12329320cc951e85cb233))
+
 ## [2.0.1](https://github.com/bjoluc/semantic-release-config-poetry/compare/v2.0.0...v2.0.1) (2022-09-20)
 
 
