@@ -28,13 +28,13 @@ A shareable semantic-release configuration and composite GitHub Action for Pytho
       needs: test
       if: github.repository_owner == 'your-github-name' && github.event_name == 'push' && github.ref == 'refs/heads/main'
       steps:
-        - uses: actions/checkout@v2
-        - uses: actions/setup-python@v2
+        - uses: actions/checkout@v3
+        - uses: actions/setup-python@v4
           with:
-            python-version: 3.8
+            python-version: "3.10"
         - name: Install poetry
-          run: pip install poetry==1.1.6
-        - uses: bjoluc/semantic-release-config-poetry@v1
+          run: pip install poetry==1.2.1
+        - uses: bjoluc/semantic-release-config-poetry@v2
           with:
             pypi_token: ${{ secrets.PYPI_TOKEN }}
             github_token: ${{ secrets.GITHUB_TOKEN }}
