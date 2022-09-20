@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/bjoluc/semantic-release-config-poetry/compare/v2.1.0...v2.1.1) (2022-09-20)
+
+
+### Bug Fixes
+
+* Fix default values of optional environment variables ([25790ad](https://github.com/bjoluc/semantic-release-config-poetry/commit/25790ad87f4d52dd134a63b4acf897aae863867e))
+
 ## [2.1.0](https://github.com/bjoluc/semantic-release-config-poetry/compare/v2.0.1...v2.1.0) (2022-09-20)
 
 
