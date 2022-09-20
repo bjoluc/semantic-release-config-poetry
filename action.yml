@@ -16,7 +16,7 @@ inputs:
     description: "The name of the Git branch to be released"
     required: false
   changelog_file:
-    description: "The filename of the changelog file"
+    description: "The path of the changelog file"
     required: false
 
 runs:
