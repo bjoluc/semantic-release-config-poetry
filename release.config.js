@@ -1,6 +1,6 @@
-const PYPI_REPOSITORY = process.env.PYPI_REPOSITORY ?? "https://upload.pypi.org/legacy/";
-const RELEASE_BRANCH = process.env.RELEASE_BRANCH ?? "main";
-const CHANGELOG_FILE = process.env.CHANGELOG_FILE ?? "CHANGELOG.md";
+const PYPI_REPOSITORY = process.env.PYPI_REPOSITORY || "https://upload.pypi.org/legacy/";
+const RELEASE_BRANCH = process.env.RELEASE_BRANCH || "main";
+const CHANGELOG_FILE = process.env.CHANGELOG_FILE || "CHANGELOG.md";
 
 const config = {
 	branches: [RELEASE_BRANCH],
