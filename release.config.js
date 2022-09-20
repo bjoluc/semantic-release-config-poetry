@@ -1,7 +1,9 @@
 const PYPI_REPOSITORY = process.env.PYPI_REPOSITORY ?? "https://upload.pypi.org/legacy/";
+const RELEASE_BRANCH = process.env.RELEASE_BRANCH ?? "main";
+const CHANGELOG_FILE = process.env.CHANGELOG_FILE ?? "CHANGELOG.md";
 
 const config = {
-	branches: ["main"],
+	branches: [RELEASE_BRANCH],
 	plugins: [
 		[
 			"@semantic-release/commit-analyzer",
@@ -18,6 +20,7 @@ const config = {
 		[
 			"@semantic-release/changelog",
 			{
+				changelogFile: CHANGELOG_FILE,
 				changelogTitle:
 					"# Changelog\n\nAll notable changes to this project will be documented in this file. See\n[Conventional Commits](https://conventionalcommits.org) for commit guidelines.",
 			},
@@ -59,7 +62,7 @@ const config = {
 		[
 			"@semantic-release/git",
 			{
-				assets: ["pyproject.toml", "*/__init__.py", "CHANGELOG.md"],
+				assets: ["pyproject.toml", "*/__init__.py", CHANGELOG_FILE],
 			},
 		],
 	],
