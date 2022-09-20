@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.2](https://github.com/bjoluc/semantic-release-config-poetry/compare/v2.1.1...v2.1.2) (2022-09-20)
+
+
+### Bug Fixes
+
+* Fix the `verifyConditions` step when the `PYPI_REPOSITORY` environment variable is not set ([702c8ec](https://github.com/bjoluc/semantic-release-config-poetry/commit/702c8ec0d8c9956476a9bef4938737686c08a560))
+
 ## [2.1.1](https://github.com/bjoluc/semantic-release-config-poetry/compare/v2.1.0...v2.1.1) (2022-09-20)
 
 
