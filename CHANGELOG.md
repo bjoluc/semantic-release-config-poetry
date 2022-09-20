@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/bjoluc/semantic-release-config-poetry/compare/v2.0.0...v2.0.1) (2022-09-20)
+
+
+### Bug Fixes
+
+* Export the config as a CommonJS module ([0a296f2](https://github.com/bjoluc/semantic-release-config-poetry/commit/0a296f2a1ef6681fb7319f5b7d11f1fac7c559c2))
+
 ## [2.0.0](https://github.com/bjoluc/semantic-release-config-poetry/compare/v1.0.4...v2.0.0) (2022-09-20)
 
 
