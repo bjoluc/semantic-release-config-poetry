@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0](https://github.com/bjoluc/semantic-release-config-poetry/compare/v1.0.4...v2.0.0) (2022-09-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* The GitHub Action input `repository` was renamed to `pypi_repository` to be consistent with the environment variable names.
+* **Dependencies:** `semantic-release` is no longer a peer dependency and doesn't need to be installed manually. Make sure to remove any manual installation commands in your CI scripts to avoid multiple mismatching versions being installed alongside each other.
+* **Dependencies:** Require Node.js LTS versions >= v14
+
+### Features
+
+* Make the `PYPI_REPOSITORY` environment variable optional ([2609da3](https://github.com/bjoluc/semantic-release-config-poetry/commit/2609da3e826b4e50b06776b7d13aaea77e37866b))
+
+
+### Bug Fixes
+
+* **GitHub Action:** Properly setup Node.js ([bec84a3](https://github.com/bjoluc/semantic-release-config-poetry/commit/bec84a3ba7a3a59d9531541e69ce4a4051e5a60b))
+
+
+### Miscellaneous Chores
+
+* **Dependencies:** Make `sementic-release` a direct dependency ([d47e01b](https://github.com/bjoluc/semantic-release-config-poetry/commit/d47e01b474ed8e9255c10a7e4efcc2e5323e9d3c))
+* **Dependencies:** Update dependencies ([c1bb910](https://github.com/bjoluc/semantic-release-config-poetry/commit/c1bb9103be2e420d774cc7038494ce6752bb4426))
+
 ### [1.0.4](https://github.com/bjoluc/semantic-release-config-poetry/compare/v1.0.3...v1.0.4) (2021-06-17)
 
 
