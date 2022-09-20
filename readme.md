@@ -60,3 +60,5 @@ Furthermore, the following optional environment variables can be set:
 | Environment variable | Description                                                                                                                                          | Default value                     |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
 | `PYPI_REPOSITORY`    | The repository to upload your Python package to (e.g., `https://upload.pypi.org/legacy/` for PyPI, or `https://test.pypi.org/legacy/` for Test PyPI) | `https://upload.pypi.org/legacy/` |
+| `RELEASE_BRANCH`     | The name of the Git branch to be released                                                                                                            | `main`                            |
+| `CHANGELOG_FILE`     | The path of the changelog file                                                                                                                       | `CHANGELOG.md`                    |

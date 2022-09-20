@@ -8,17 +8,16 @@ inputs:
   github_token:
     description: "A GitHub API token (to publish GitHub releases and comment on resolved issues)"
     required: true
+
   pypi_repository:
     description: "The repository to upload your Python package to (e.g., `https://upload.pypi.org/legacy/` for PyPI, or `https://test.pypi.org/legacy/` for Test PyPI)"
     required: false
+  release_branch:
+    description: "The name of the Git branch to be released"
+    required: false
   changelog_file:
-    description: "File to write the changelog to"
+    description: "The filename of the changelog file"
     required: false
-    default: "CHANGELOG.md"
-  branch:
-    description: "Git branch to use"
-    required: false
-    default: "main"
 
 runs:
   using: "composite"
@@ -33,9 +32,9 @@ runs:
     - name: Release
       shell: bash
       env:
-        PYPI_REPOSITORY: ${{ inputs.pypi_repository }}
         PYPI_TOKEN: ${{ inputs.pypi_token }}
         GITHUB_TOKEN: ${{ inputs.github_token }}
+        PYPI_REPOSITORY: ${{ inputs.pypi_repository }}
+        RELEASE_BRANCH: ${{ inputs.release_branch }}
         CHANGELOG_FILE: ${{ inputs.changelog_file }}
-        BRANCH: ${{ inputs.branch }}
       run: npx semantic-release --extends @bjoluc/semantic-release-config-poetry
