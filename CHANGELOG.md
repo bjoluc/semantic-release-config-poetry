@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.0](https://github.com/bjoluc/semantic-release-config-poetry/compare/v2.1.2...v2.2.0) (2022-10-04)
+
+
+### Features
+
+* **GitHub Action:** Make the `github_token` input optional ([#2](https://github.com/bjoluc/semantic-release-config-poetry/issues/2)) ([6337108](https://github.com/bjoluc/semantic-release-config-poetry/commit/63371083c06e3341560e1448d377cbf275c5ea44))
+
 ## [2.1.2](https://github.com/bjoluc/semantic-release-config-poetry/compare/v2.1.1...v2.1.2) (2022-09-20)
 
 
