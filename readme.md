@@ -36,7 +36,6 @@ A shareable semantic-release configuration and composite GitHub Action for Pytho
         - uses: bjoluc/semantic-release-config-poetry@v2
           with:
             pypi_token: ${{ secrets.PYPI_TOKEN }}
-            github_token: ${{ secrets.GITHUB_TOKEN }}
   ```
 
 - If you are not using GitHub Actions, configure a release job in your CI like this:
@@ -49,15 +48,15 @@ A shareable semantic-release configuration and composite GitHub Action for Pytho
 The shareable semantic-release configuration exposed by this package requires the following environment variables.
 When using the GitHub action, each environment variable can be set via its corresponding lower-case input variable (e.g., `pypi_token` for `PYPI_TOKEN`).
 
-| Environment variable | Description                                                         |
-| -------------------- | ------------------------------------------------------------------- |
-| `PYPI_TOKEN`         | An API token for the PyPI repository specified by `PYPI_REPOSITORY` |
+| Environment variable | Description                                                                                                                                                                       |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `PYPI_TOKEN`         | An API token for the PyPI repository specified by `PYPI_REPOSITORY`                                                                                                               |
+| `GITHUB_TOKEN`       | A GitHub API token to publish GitHub releases and comment on resolved issues. The `github_token` Action input is optional and defaults to the value of the `GITHUB_TOKEN` secret. |
 
 Furthermore, the following optional environment variables can be set:
 
 | Environment variable | Description                                                                                                                                          | Default value                     |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
 | `PYPI_REPOSITORY`    | The repository to upload your Python package to (e.g., `https://upload.pypi.org/legacy/` for PyPI, or `https://test.pypi.org/legacy/` for Test PyPI) | `https://upload.pypi.org/legacy/` |
-| `GITHUB_TOKEN`       | A GitHub API token (to publish GitHub releases and comment on resolved issues) Defaults to the token provided by the github actions environment      | `GITHUB_TOKEN`                    |
 | `RELEASE_BRANCH`     | The name of the Git branch to be released                                                                                                            | `main`                            |
 | `CHANGELOG_FILE`     | The path of the changelog file                                                                                                                       | `CHANGELOG.md`                    |

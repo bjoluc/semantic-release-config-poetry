@@ -6,14 +6,16 @@ inputs:
     description: "An API token for the PyPI repository specified by `pypi_repository`"
     required: true
   github_token:
-    description: "A GitHub API token (to publish GitHub releases and comment on resolved issues)"
+    description: "A GitHub API token to publish GitHub releases and comment on resolved issues"
     default: ${{ github.token }}
+    required: false
+
   pypi_repository:
     description: "The repository to upload your Python package to (e.g., `https://upload.pypi.org/legacy/` for PyPI, or `https://test.pypi.org/legacy/` for Test PyPI)"
     required: false
   release_branch:
-    description: "The name of the Git branch to be released, default ${{ github.repository.default_branch }}"
-    default: ${{ github.repository.default_branch }}
+    description: "The name of the Git branch to be released"
+    required: false
   changelog_file:
     description: "The path of the changelog file"
     required: false
